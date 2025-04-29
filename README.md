@@ -8,7 +8,12 @@ This project demonstrates Humanoid walking simulation using MuJoCo and Pinocchio
 - 🔧 **Inverse Kinematics (IK)** solved using Pinocchio and BFGS optimization
 - 🎮 Simulated in **MuJoCo** with live visualization
 
+
 ---
 
-## 📁 Project Structure
+## ⚙️ Dependencies
 
+Make sure the following are installed:
+
+```bash
+pip install numpy scipy pin mujoco
