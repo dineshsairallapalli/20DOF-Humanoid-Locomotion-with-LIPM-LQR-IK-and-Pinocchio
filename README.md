@@ -17,3 +17,23 @@ Make sure the following are installed:
 
 ```bash
 pip install numpy scipy pin mujoco
+
+Additionally:
+
+✅ MuJoCo >= 2.3 installed and licensed
+
+✅ Python >= 3.8
+
+✅ Visual display (for mujoco.viewer)
+
+✅ Pinocchio library installed (pip install pin)
+
+🚀 How to Run
+Clone the repository:
+
+git clone https://github.com/dineshsairallapalli/20DOF-Humanoid-Locomotion-with-LIPM-LQR-IK-and-Pinocchio.git
+cd 20DOF-Humanoid-Locomotion-with-LIPM-LQR-IK-and-Pinocchio
+
+Set MuJoCo path: Edit the XML path in walking_simulation.py:
+
+xml = r"absolute\path\to\scene.xml"
