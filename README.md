@@ -53,23 +53,23 @@ The simulation will launch a MuJoCo viewer window and execute the planned walkin
 ---
 
 **Methodology**
-1. Footstep Planning
+Footstep Planning
 Define a time-based sequence of support phases and target footstep locations.
 
-2. ZMP Reference Generator
+ZMP Reference Generator
 Creates a piecewise affine ZMP trajectory based on the current walking phase.
 
-3. LIPM + LQR CoM Controller
+LIPM + LQR CoM Controller
 Simulates CoM motion using:
 
 A 2D linear inverted pendulum model
 
 LQR to stabilize CoM to ZMP
 
-4. Swing Foot Trajectory
+Swing Foot Trajectory
 A cubic Hermite spline generates a smooth foot swing path with a configurable mid-lift height.
 
-5. Inverse Kinematics with Pinocchio
+Inverse Kinematics with Pinocchio
 Uses frame-level IK with cost minimization (BFGS) to compute robot joint angles that meet CoM and foot position constraints.
 
 ---
