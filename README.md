@@ -48,27 +48,28 @@ python walking_op3.py
 
 The simulation will launch a MuJoCo viewer window and execute the planned walking gait in real-time.
 
-🧠 Methodology
-🧩 1. Footstep Planning
+**Methodology**
+1. Footstep Planning
 Define a time-based sequence of support phases and target footstep locations.
 
-🔄 2. ZMP Reference Generator
+2. ZMP Reference Generator
 Creates a piecewise affine ZMP trajectory based on the current walking phase.
 
-⚖️ 3. LIPM + LQR CoM Controller
+3. LIPM + LQR CoM Controller
 Simulates CoM motion using:
 
 A 2D linear inverted pendulum model
 
 LQR to stabilize CoM to ZMP
 
-🦿 4. Swing Foot Trajectory
+4. Swing Foot Trajectory
 A cubic Hermite spline generates a smooth foot swing path with a configurable mid-lift height.
 
-🔧 5. Inverse Kinematics with Pinocchio
+5. Inverse Kinematics with Pinocchio
 Uses frame-level IK with cost minimization (BFGS) to compute robot joint angles that meet CoM and foot position constraints.
 
-🧪 Features
+**Features**
+
 Full walking sequence with alternating support
 
 Modular code for ZMP control and foot trajectory design
@@ -78,13 +79,15 @@ Compatible with MuJoCo’s native scene and physics
 Lightweight Euler integration for real-time simulation
 
 **Known Limitations**
+
 Not integrated with a whole-body QP solver or external disturbances
 
 Assumes flat ground and pre-defined foot targets
 
 IK uses numerical optimization (may require tuning for convergence)
 
-📌 Future Work
+**Future Work**
+
 Terrain adaptation and dynamic replanning
 
 Whole-body control using QP solvers
@@ -93,5 +96,6 @@ ROS2 integration and hardware deployment
 
 Vision/IMU sensor integration for feedback
 
-📄 License
+**License**
+
 This project is released under the MIT License.
