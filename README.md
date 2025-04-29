@@ -10,11 +10,5 @@ This project demonstrates Humanoid walking simulation using MuJoCo and Pinocchio
 
 ---
 
-## 📽️ Demo
-
-> (Add a GIF or YouTube link here showing the OP3 robot walking in the simulation)
-
----
-
 ## 📁 Project Structure
 
