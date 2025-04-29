@@ -77,7 +77,7 @@ Compatible with MuJoCo’s native scene and physics
 
 Lightweight Euler integration for real-time simulation
 
-##Known Limitations
+**Known Limitations**
 Not integrated with a whole-body QP solver or external disturbances
 
 Assumes flat ground and pre-defined foot targets
