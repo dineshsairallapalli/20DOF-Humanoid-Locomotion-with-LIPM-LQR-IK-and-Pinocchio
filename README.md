@@ -1,6 +1,6 @@
 # 🤖 20DOF Humanoid Locomotion with LIPM, LQR, IK, and Pinocchio
 
-This project demonstrates **humanoid walking simulation** using **MuJoCo** and **Pinocchio**, featuring ZMP-based locomotion planning, LQR-based CoM control, swing foot trajectory generation, and inverse kinematics for dynamic walking of a **Robotis OP3** robot. It integrates:
+This project demonstrates Humanoid walking simulation using MuJoCo and Pinocchio, featuring ZMP-based locomotion planning, LQR CoM control, swing foot trajectory generation, and inverse kinematics for dynamic walking of a Robotis OP3 robot.  It integrates:
 
 - 🧠 **Linear Inverted Pendulum Model (LIPM)** for dynamic walking
 - 🧮 **LQR control** for Center of Mass (CoM) stabilization
@@ -8,90 +8,90 @@ This project demonstrates **humanoid walking simulation** using **MuJoCo** and *
 - 🔧 **Inverse Kinematics (IK)** solved using Pinocchio and BFGS optimization
 - 🎮 Simulated in **MuJoCo** with live visualization
 
+
 ---
 
 ## ⚙️ Dependencies
 
-Install the required Python libraries:
+Make sure the following are installed:
 
 ```bash
 pip install numpy scipy pin mujoco
-Additional Requirements:
+
+Additionally:
 
 ✅ MuJoCo >= 2.3 installed and licensed
 
 ✅ Python >= 3.8
 
-✅ Display capability (for mujoco.viewer)
+✅ Visual display (for mujoco.viewer)
 
-✅ Pinocchio installed (pip install pin)
+✅ Pinocchio library installed (pip install pin)
+
+---
 
 🚀 How to Run
 Clone the repository:
 
-bash
-Copy
-Edit
 git clone https://github.com/dineshsairallapalli/20DOF-Humanoid-Locomotion-with-LIPM-LQR-IK-and-Pinocchio.git
 cd 20DOF-Humanoid-Locomotion-with-LIPM-LQR-IK-and-Pinocchio
-Edit the MuJoCo XML path in walking_simulation.py:
 
-python
-Copy
-Edit
-xml = r"absolute\\path\\to\\scene.xml"
+---
+
+Set MuJoCo path: Edit the XML path in walking_simulation.py:
+
+xml = r"absolute\path\to\scene.xml"
+
 Run the simulation:
 
-bash
-Copy
-Edit
 python walking_op3.py
-This will launch a MuJoCo viewer window and execute the planned walking gait in real-time.
+
+The simulation will launch a MuJoCo viewer window and execute the planned walking gait in real-time.
 
 🧠 Methodology
 🧩 1. Footstep Planning
-Define a sequence of walking phases (e.g., single support, double support) and target foot positions over time.
+Define a time-based sequence of support phases and target footstep locations.
 
 🔄 2. ZMP Reference Generator
-Generates a piecewise affine Zero Moment Point (ZMP) trajectory to maintain balance and guide CoM movement.
+Creates a piecewise affine ZMP trajectory based on the current walking phase.
 
 ⚖️ 3. LIPM + LQR CoM Controller
-Simulates CoM dynamics using:
+Simulates CoM motion using:
 
-A 2D Linear Inverted Pendulum Model (LIPM)
+A 2D linear inverted pendulum model
 
-Linear Quadratic Regulator (LQR) for stabilizing the CoM over the ZMP
+LQR to stabilize CoM to ZMP
 
 🦿 4. Swing Foot Trajectory
-Generates swing foot motions using cubic Hermite splines with a configurable lift height and duration.
+A cubic Hermite spline generates a smooth foot swing path with a configurable mid-lift height.
 
 🔧 5. Inverse Kinematics with Pinocchio
-Solves joint configurations using BFGS optimization to match desired foot placements and CoM reference positions.
+Uses frame-level IK with cost minimization (BFGS) to compute robot joint angles that meet CoM and foot position constraints.
 
 🧪 Features
-Full walking sequence with alternating stance/swing phases
+Full walking sequence with alternating support
 
-Modular control for ZMP, CoM, and foot trajectory
+Modular code for ZMP control and foot trajectory design
 
-Simulation-ready with real-time visualization in MuJoCo
+Compatible with MuJoCo’s native scene and physics
 
-Lightweight control loop based on Euler integration
+Lightweight Euler integration for real-time simulation
 
 🧱 Known Limitations
-Not integrated with full-body QP solvers or external disturbance handling
+Not integrated with a whole-body QP solver or external disturbances
 
-Currently assumes a flat walking surface
+Assumes flat ground and pre-defined foot targets
 
-IK may require tuning for convergence in edge cases
+IK uses numerical optimization (may require tuning for convergence)
 
 📌 Future Work
-Support for terrain variation and online footstep replanning
+Terrain adaptation and dynamic replanning
 
-Whole-body balancing and dynamic QP solvers
+Whole-body control using QP solvers
 
-ROS2 integration and deployment on hardware
+ROS2 integration and hardware deployment
 
-Vision or IMU-based feedback loop integration
+Vision/IMU sensor integration for feedback
 
 📄 License
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is released under the MIT License.
