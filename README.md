@@ -54,6 +54,7 @@ The simulation will launch a MuJoCo viewer window and execute the planned walkin
 
 **Methodology**
 Footstep Planning
+
 Define a time-based sequence of support phases and target footstep locations.
 
 ZMP Reference Generator
