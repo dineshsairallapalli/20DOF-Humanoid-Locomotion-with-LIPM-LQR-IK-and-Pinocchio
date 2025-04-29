@@ -15,7 +15,7 @@ This project demonstrates Humanoid walking simulation using MuJoCo and Pinocchio
 
 Make sure the following are installed:
 
-```bash
+
 pip install numpy scipy pin mujoco
 
 Additionally:
