@@ -42,11 +42,15 @@ Set MuJoCo path: Edit the XML path in walking_simulation.py:
 
 xml = r"absolute\path\to\scene.xml"
 
+---
+
 Run the simulation:
 
 python walking_op3.py
 
 The simulation will launch a MuJoCo viewer window and execute the planned walking gait in real-time.
+
+---
 
 **Methodology**
 1. Footstep Planning
@@ -68,6 +72,8 @@ A cubic Hermite spline generates a smooth foot swing path with a configurable mi
 5. Inverse Kinematics with Pinocchio
 Uses frame-level IK with cost minimization (BFGS) to compute robot joint angles that meet CoM and foot position constraints.
 
+---
+
 **Features**
 
 Full walking sequence with alternating support
@@ -78,6 +84,8 @@ Compatible with MuJoCo’s native scene and physics
 
 Lightweight Euler integration for real-time simulation
 
+---
+
 **Known Limitations**
 
 Not integrated with a whole-body QP solver or external disturbances
@@ -85,6 +93,8 @@ Not integrated with a whole-body QP solver or external disturbances
 Assumes flat ground and pre-defined foot targets
 
 IK uses numerical optimization (may require tuning for convergence)
+
+---
 
 **Future Work**
 
@@ -95,6 +105,8 @@ Whole-body control using QP solvers
 ROS2 integration and hardware deployment
 
 Vision/IMU sensor integration for feedback
+
+---
 
 **License**
 
