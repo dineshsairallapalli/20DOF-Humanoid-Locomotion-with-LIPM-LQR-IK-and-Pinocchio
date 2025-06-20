@@ -109,7 +109,4 @@ ROS2 integration and hardware deployment
 Vision/IMU sensor integration for feedback
 
 ---
-
-**License**
-
-This project is released under the MIT License.
+Happy Walking!
