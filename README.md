@@ -1,6 +1,6 @@
 **Walking Controller for Robotis OP3 in MuJoCo + Pinocchio**
 
-Welcome to the Robotis OP3 walking controller demo! This repository provides a pedagogical yet extensible whole-body walking framework for the OP3 humanoid in MuJoCo, combining:
+The repository provides a pedagogical yet extensible whole-body walking framework for the OP3 humanoid in MuJoCo, combining:
 
 * A Linear Inverted Pendulum Model (LIPM) with LQR for real-time Center of Mass (CoM) stabilization
 * Cubic‐Hermite swing‐foot splines for smooth stepping
@@ -8,7 +8,7 @@ Welcome to the Robotis OP3 walking controller demo! This repository provides a p
 
 ---
 
-## 📖 Abstract
+## Abstract
 
 We implement a simplified zero‐moment‐point walking algorithm:
 
@@ -23,7 +23,7 @@ This codebase is intended for learning, extension, and benchmarking simple walki
 
 ---
 
-## 💡 Core Concepts
+## Core Concepts
 
 ### Zero‐Moment Point (ZMP)
 
@@ -82,7 +82,7 @@ where **M\_i(q)** is the SE(3) pose of frame **i**, and **M\_des\_i** is its tar
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Clone & Setup
 
@@ -124,7 +124,7 @@ Upon launch, a MuJoCo GUI window appears. The OP3 will step forward according to
 
 ---
 
-## 🔍 Detailed Modules
+## Detailed Modules
 
 ### 1. Footstep Planner (`scripts/utils.py: FootSteps`)
 
@@ -196,7 +196,7 @@ Upon launch, a MuJoCo GUI window appears. The OP3 will step forward according to
 
 ---
 
-## ⚙️ Command‐Line Arguments
+## Command‐Line Arguments
 
 Run `python scripts/walk_controller.py --help` for:
 
@@ -235,14 +235,6 @@ Or with Conda: `conda env create -f environment.yml`
 
 ---
 
-## 🛠️ Troubleshooting
-
-* **MuJoCo key not found**: place `mjkey.txt` in `~/.mujoco/` and set `LD_LIBRARY_PATH`.
-* **Pinocchio import error**: ensure `pinocchio` and its eigen/boost dependencies are installed.
-* **Actuator mapping**: joint names in MuJoCo must match URDF; adjust prefixes in `walk_controller.py`.
-
----
-
 ## 🚀 Extensions & Research Directions
 
 * Replace finite‐difference IK with analytic Jacobian solves.
@@ -252,29 +244,5 @@ Or with Conda: `conda env create -f environment.yml`
 * Integrate reflexive ankle or arm swing controllers.
 
 ---
-
-## 🙏 Acknowledgments & References
-
-* Pratt, Jerry, and Goswami. “Capture Point: A Step toward Humanoid Push Recovery.” RSS 2006.
-* Kajita et al., “Biped walking pattern generation by using preview control of zero‐moment point” ICRA 2003.
-* Pinocchio: [https://stack-of-tasks.github.io/pinocchio/](https://stack-of-tasks.github.io/pinocchio/)
-* MuJoCo: [https://mujoco.org](https://mujoco.org)
-
----
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Please use GitHub issues and pull requests.
-
-1. Fork the repo
-2. Create a branch (`git checkout -b feature/YourFeature`)
-3. Commit your changes (`git commit -m 'Add feature'`)
-4. Push and open a PR
-
----
-
-## 📄 License
-
-This project is released under the **MIT License** – see [LICENSE](LICENSE).
 
 Happy walking! 🚶
